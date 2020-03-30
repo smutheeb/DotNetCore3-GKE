@@ -8,7 +8,11 @@ spec:
   gateways:
   - aspnetcore-gateway
   http:
-  - route:
+  - fault:
+      abort:
+        percent: 50
+        httpStatus: 400
+    route:
     - destination:
         host: aspnetcore-service
-        subset: v2
+        subset: v1

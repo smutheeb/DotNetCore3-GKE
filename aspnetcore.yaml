@@ -14,18 +14,18 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: aspnetcore-v1
+  name: aspnetcore-v2
 spec:
   replicas: 1
   template:
     metadata:
       labels:
         app: aspnetcore
-        version: v1
+        version: v2
     spec:
       containers:
       - name: aspnetcore
-        image: gcr.io/dotnetcoreproject-266918/hello-dotnet:v1
+        image: gcr.io/dotnetcoreproject-266918/hello-dotnet:v2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

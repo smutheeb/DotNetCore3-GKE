@@ -8,7 +8,11 @@ spec:
   gateways:
   - aspnetcore-gateway
   http:
-  - route:
+  - fault:
+      delay:
+        fixedDelay: 5s
+        percent: 100
+    route:
     - destination:
         host: aspnetcore-service
-        subset: v2
+        subset: v1
